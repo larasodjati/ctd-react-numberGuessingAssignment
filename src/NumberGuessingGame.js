@@ -84,6 +84,12 @@ function NumberGuessingGame() {
     setNumberOfGuesses(numberOfGuesses + 1);
   };
 
+  const handleReset = () => {
+    setNumberToGuess(getRandomNumber());
+    setNumberOfGuesses(0);
+    setLatestGuess(null);
+  };
+
   const isCorrectGuess = latestGuess === numberToGuess;
 
   const isGameOver = isCorrectGuess || numberOfGuesses === MAX_ATTEMPTS;
