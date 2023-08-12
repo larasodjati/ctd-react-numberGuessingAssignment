@@ -44,4 +44,5 @@ class GuessControlOld extends Component {
   }
 }
 
+function GuessControl({ onGuess }) {}
 export default GuessControl;
