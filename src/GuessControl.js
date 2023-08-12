@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Button from "./Button";
 
 class GuessControlOld extends Component {
@@ -45,6 +45,8 @@ class GuessControlOld extends Component {
 }
 
 function GuessControl({ onGuess }) {
+  const [currentGuess, setCurrentGuess] = useState("");
+
   return (
     <div>
       <input type="number" value={currentGuess} onChange={handleInputChange} />
