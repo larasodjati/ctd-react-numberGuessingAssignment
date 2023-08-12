@@ -51,6 +51,10 @@ function GuessControl({ onGuess }) {
     setCurrentGuess(event.target.value);
   };
 
+  const onSubmitGuess = () => {
+    onGuess(currentGuess);
+  };
+
   return (
     <div>
       <input type="number" value={currentGuess} onChange={handleInputChange} />
