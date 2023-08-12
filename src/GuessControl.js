@@ -47,6 +47,10 @@ class GuessControlOld extends Component {
 function GuessControl({ onGuess }) {
   const [currentGuess, setCurrentGuess] = useState("");
 
+  const handleInputChange = (event) => {
+    setCurrentGuess(event.target.value);
+  };
+
   return (
     <div>
       <input type="number" value={currentGuess} onChange={handleInputChange} />
