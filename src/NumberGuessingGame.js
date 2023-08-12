@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import GuessControl from "./GuessControl";
 import GuessMessage from "./GuessMessage";
 import GameOver from "./GameOver";
@@ -75,6 +75,10 @@ class NumberGuessingGameOld extends Component {
 }
 
 function NumberGuessingGame() {
+  const [numberToGuess, setNumberToGuess] = useState(getRandomNumber());
+  const [numberOfGuesses, setNumberOfGuesses] = useState(0);
+  const [latestGuess, setLatestGuess] = useState(null);
+
   const isCorrectGuess = this.state.latestGuess === this.state.numberToGuess;
 
   const isGameOver =
