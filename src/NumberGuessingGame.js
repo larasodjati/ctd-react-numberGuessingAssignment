@@ -13,7 +13,7 @@ function getRandomNumber() {
 
 const MAX_ATTEMPTS = 5;
 
-class NumberGuessingGame extends Component {
+class NumberGuessingGameOld extends Component {
   constructor(props) {
     super(props);
 
