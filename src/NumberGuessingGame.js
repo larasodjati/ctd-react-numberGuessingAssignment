@@ -79,6 +79,11 @@ function NumberGuessingGame() {
   const [numberOfGuesses, setNumberOfGuesses] = useState(0);
   const [latestGuess, setLatestGuess] = useState(null);
 
+  const handleGuess = (guess) => {
+    setLatestGuess(guess);
+    setNumberOfGuesses(numberOfGuesses + 1);
+  };
+
   const isCorrectGuess = latestGuess === numberToGuess;
 
   const isGameOver = isCorrectGuess || numberOfGuesses === MAX_ATTEMPTS;
