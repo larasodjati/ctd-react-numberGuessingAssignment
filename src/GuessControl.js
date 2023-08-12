@@ -44,5 +44,12 @@ class GuessControlOld extends Component {
   }
 }
 
-function GuessControl({ onGuess }) {}
+function GuessControl({ onGuess }) {
+  return (
+    <div>
+      <input type="number" value={currentGuess} onChange={handleInputChange} />
+      <Button onClick={onSubmitGuess}>Submit Guess</Button>
+    </div>
+  );
+}
 export default GuessControl;
