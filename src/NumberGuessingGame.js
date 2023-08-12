@@ -74,4 +74,28 @@ class NumberGuessingGameOld extends Component {
   }
 }
 
+function NumberGuessingGame() {
+  const isCorrectGuess = this.state.latestGuess === this.state.numberToGuess;
+
+  const isGameOver =
+    isCorrectGuess || this.state.numberOfGuesses === MAX_ATTEMPTS;
+
+  return (
+    <div>
+      <h2>I'm thinking of a number from 1 to 100.</h2>
+      <h2>
+        Can you guess the number I am thinking of in {MAX_ATTEMPTS} tries?
+      </h2>
+      <GuessControl onGuess={handleGuess} />
+      {isGameOver && <GameOver hasWon={isCorrectGuess} onReset={handleReset} />}
+      {!isGameOver && (
+        <GuessMessage
+          guess={latestGuess}
+          numberToGuess={numberToGuess}
+          numberOfGuesses={numberOfGuesses}
+        />
+      )}
+    </div>
+  );
+}
 export default NumberGuessingGame;
